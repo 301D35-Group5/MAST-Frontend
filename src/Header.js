@@ -5,10 +5,18 @@ import { Link } from "react-router-dom";
 class Header extends React.Component {
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand>My Favorite Books</Navbar.Brand>
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar.Brand>The Header</Navbar.Brand>
         <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
-        {/* PLACEHOLDER: render a navigation link to the about page */}
+        <NavItem><Link to="/Explore" className="nav-link">Explore</Link></NavItem>
+        <NavItem><Link to="/Events" className="nav-link">Events</Link></NavItem>
+        <NavItem><Link to="/HiddenGems" className="nav-link">Hidden Gems</Link></NavItem>
+        <NavItem><Link to="/About" className="nav-link">About Us</Link></NavItem>
+
+
+
+
+
       </Navbar>
     )
   }

@@ -1,7 +1,12 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import BestBooks from './BestBooks';
+import Home from './Home';
+import Explore from './Explore';
+import Events from './Events';
+import HiddenGems from './HiddenGems';
+import About from './About';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -18,10 +23,27 @@ class App extends React.Component {
           <Routes>
             <Route 
               exact path="/"
-              element={<BestBooks />}
+              element={<Home />}
             >
             </Route>
-            {/* PLACEHOLDER: add a route with a path of '/about' that renders the `About` component */}
+            <Route 
+              exact path="/Explore"
+              element={<Explore />}
+            >
+            </Route><Route 
+              exact path="/Events"
+              element={<Events />}
+            >
+            </Route><Route 
+              exact path="/HiddenGems"
+              element={<HiddenGems />}
+            >
+            </Route><Route 
+              exact path="/About"
+              element={<About />}
+            >
+            </Route>
+            
           </Routes>
           <Footer />
         </Router>
