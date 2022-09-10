@@ -6,6 +6,7 @@ import Explore from './Explore';
 import Events from './Events';
 import HiddenGems from './HiddenGems';
 import About from './About';
+import Anime from './Anime';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -43,7 +44,11 @@ class App extends React.Component {
               element={<About />}
             >
             </Route>
-            
+            <Route 
+              exact path="/Anime"
+              element={<Anime />}
+            >
+            </Route>
           </Routes>
           <Footer />
         </Router>

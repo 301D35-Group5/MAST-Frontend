@@ -12,6 +12,8 @@ class Header extends React.Component {
         <NavItem><Link to="/Events" className="nav-link">Events</Link></NavItem>
         <NavItem><Link to="/HiddenGems" className="nav-link">Hidden Gems</Link></NavItem>
         <NavItem><Link to="/About" className="nav-link">About Us</Link></NavItem>
+        <NavItem><Link to="/Anime" className="nav-link">Anime</Link></NavItem>
+
 
 
 
