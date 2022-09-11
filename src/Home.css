@@ -1,0 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+.body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    background-color: #110F16;
+}
+
+
+img {
+    width: 100%;
+
+}
+.heading-top{
+    color: #ff9f29;
+    text-transform:uppercase;
+    font-weight: 700;
+   
+}
+.headHomePart{
+    display: flex;
+    align-items: center;
+    padding: 100px 100px 100px 30px;
+    gap: 100px;
+}
+.headHomePart img{
+    border-radius: 20px;
+    height: 400px;
+    width: 500px;
+}
+
+.headHomePart h3{
+    
+line-height: 1;
+
+
+
+}
+.headHomePart h4{
+    
+    line-height: 2;
+    color: #ff9f29;
+    
+    
+    }
+.headHomePart p{
+    color: #aaa;
+line-height: 2;
+font-size: small;
+
+}
+.headHomePart h2 {
+    font-size: 42px;
+    color: white;
+}
+.read-more {
+    color: #ff9f29;
+}
+
+.headHomePart > article:last-child{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    }
+    .Bored{
+        display: flex;
+        padding: 0 30px 100px 100px;
+        align-items:center;
+        gap: 200px;
+        color: white;
+        
+    }
+   
+    .Bored-2-col{
+        display: grid;
+      
+        width: 100%;
+        gap: 20px;
+    
+    }
+    .Bored-2-col img{
+          height: 100%;
+          object-fit:cover;
+          border-radius: 20px;
+          
+          
+    }
+    .headHomePart button {
+        background-color: #555555; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 20px;
+      }
