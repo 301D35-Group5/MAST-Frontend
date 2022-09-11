@@ -1,7 +1,7 @@
-import React from 'react';
-import { Navbar, NavItem } from 'react-bootstrap';
+import React from "react";
 import { Link } from "react-router-dom";
-import './Header.css';
+import "./Header.css";
+import Dropdown from "react-bootstrap/Dropdown";
 
 class Header extends React.Component {
   render() {
@@ -16,31 +16,51 @@ class Header extends React.Component {
       //   <NavItem><Link to="/Anime" className="nav-link">Anime</Link></NavItem>
       //   <NavItem><Link to="/TV" className="nav-link">TV</Link></NavItem>
 
-
-
-
-
-
       // </Navbar>
       <header>
-            <div className="container">
-                <div className="inner-content">
-                    <div className="brand">
-                        <Link to="/">Movie WatchList</Link>
-                    </div>
-
-                    <ul className="nav-links">
-                        <li><Link to="/">Watch List</Link></li>
-                        <li><Link to="/HiddenGems">HiddenGems</Link></li>
-                        <li><Link to="/Anime" className="btn">+ Anime</Link></li>
-                        <li><Link to="/TV" className="btn">+ TV</Link></li>
-
-
-                    </ul>
-                </div>
+        <div className="container">
+          <div className="inner-content">
+            <div className="brand">
+              <Link to="/">Movie WatchList</Link>
             </div>
-        </header>
-    )
+
+            <ul className="nav-links">
+              <li>
+                <Link to="/">Watch List</Link>
+              </li>
+              <li>
+                <Link to="/HiddenGems">HiddenGems</Link>
+              </li>
+              <li>
+                <Link to="/Anime" className="btn">
+                  + Anime
+                </Link>
+              </li>
+              <li>
+                <Link to="/TV" className="btn">
+                  + TV
+                </Link>
+              </li>
+              <li>
+                <Dropdown>
+                  <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+                    Explore
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="./anime">Anime</Dropdown.Item>
+                    <Dropdown.Item href="./TV">
+                      Series
+                    </Dropdown.Item>
+                  
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    );
   }
 }
 
