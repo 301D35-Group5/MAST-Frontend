@@ -2,6 +2,8 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import "./Home.css";
 import "./HomeCards.css";
+import NavItem from 'react-bootstrap/NavItem';
+import Login from './Login';
 class Home extends React.Component {
  
 
@@ -220,7 +222,9 @@ class Home extends React.Component {
         <h3 class="heading-top">Watch list</h3>
         <h2>Add the show to your watch list and then watch it later.</h2>
         <h4>sign in now for free</h4>
-        <button>Sign in</button>
+        <NavItem style={{ color: "white", paddingLeft: "25px" }}>
+                  <Login />
+                </NavItem>
         
           </article>
           <article>
