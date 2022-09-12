@@ -6,10 +6,12 @@ import Login from './Login';
 import LogOut from './LogOut';
 import {  NavItem } from 'react-bootstrap';
 import logo from './logo.png';
-
+import { withAuth0 } from '@auth0/auth0-react';
 
 class Header extends React.Component {
+  
   render() {
+    const { isAuthenticated } = this.props.auth0;
     return (
       // <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       //   <Navbar.Brand>The Header</Navbar.Brand>
@@ -49,9 +51,11 @@ class Header extends React.Component {
               </li>
               
               <li>
+              {isAuthenticated && 
                 <Link to="/Profile">
                   Profile
                 </Link>
+                }
               </li>
               <li>
                 <Link to="/About">
@@ -59,14 +63,13 @@ class Header extends React.Component {
                 </Link>
               </li>
               <li>
-                <NavItem variant="secondary" style={{ color: "grey", paddingLeft: "25px" }}>
+                <NavItem variant="secondary" style={{  paddingLeft: "10px" }}>
                   <Login />
                 </NavItem>
-                <NavItem variant="secondary" style={{ color: "grey", paddingLeft: "25px" }}>
+                <NavItem variant="secondary" style={{  paddingLeft: "10px" }}>
                   <LogOut />
                 </NavItem>
               </li>
-              
             </ul>
           </div>
         </div>
@@ -75,4 +78,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);

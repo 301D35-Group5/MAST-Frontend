@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import logo from './logo.png'
+
 
 class AddForm extends React.Component {
     render(){
@@ -13,6 +15,15 @@ class AddForm extends React.Component {
             </Modal.Header>
             <Modal.Body>
               <Form onSubmit={this.props.addReco}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>img</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="img"
+                    name="img"
+                    defaultValue={this.props.selectedReco.img || logo.png}
+                  />
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Series name</Form.Label>
                   <Form.Control
