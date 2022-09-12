@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
-
+import { withAuth0 } from '@auth0/auth0-react';
 import { Button, Form, FormGroup, FormLabel, FormSelect } from "react-bootstrap";
 import './Anime.css';
 class TV extends React.Component {
@@ -50,7 +50,34 @@ class TV extends React.Component {
 
 
 
+    //here add watchList:
+    addProf = (event) => {
+      const { user } = this.props.auth0;
+      alert("Success")
+      event.preventDefault();
+      const obj = {
+        title: event.target.title,
+        poster: event.target.name,
+        email: user.email
+      };
+      console.log(obj)
+      axios
+        .post(`http://localhost:3001/addProf`, obj)
+        .then((result) => {
+
+        })
+  
+        .catch((err) => {
+          console.log(err)
+        })
+  
+    }
+  
+
+
+
   render() {
+    const { isAuthenticated } = this.props.auth0;
     return (
       <>
 
@@ -95,8 +122,9 @@ class TV extends React.Component {
                   <figure class="card">
                     <img src={item.poster} />
     
-                    <figcaption>{item.title}</figcaption>
+                    <figcaption>{item.title} {isAuthenticated && <Button onClick={this.addProf} title={item.title} name={item.poster}>Add watch list</Button>}</figcaption>
                   </figure>
+                  
                 </div>
                 ))}
               </Row>
@@ -127,4 +155,4 @@ class TV extends React.Component {
   }
 }
 
-export default TV;
+export default withAuth0(TV);

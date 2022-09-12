@@ -17,7 +17,8 @@ class HiddenGems extends React.Component {
       recoArr: [],
       showForm: false,
       showAddForm: false,
-      selectedReco: {}
+      selectedReco: {},
+      img: null
     }
   }
 
@@ -25,7 +26,8 @@ class HiddenGems extends React.Component {
     console.log(process.env.REACT_APP_URL)
     axios
       .get(`http://localhost:3001/getReco`)
-      .then(result => {
+      .then((result) => {
+
         console.log(result.data);
         this.setState({
           recoArr: result.data
@@ -39,6 +41,7 @@ class HiddenGems extends React.Component {
   addReco = (event) => {
     event.preventDefault();
     const obj = {
+      img: event.target.img.value,
       seriesName: event.target.seriesName.value,
       description: event.target.description.value,
       rating: event.target.rating.value,
@@ -48,7 +51,8 @@ class HiddenGems extends React.Component {
       .post(`http://localhost:3001/addReco`, obj)
       .then((result) => {
         this.setState({
-          recoArr: result.data
+          recoArr: result.data,
+
         })
       })
 
@@ -90,6 +94,7 @@ class HiddenGems extends React.Component {
   updateReco = (event) => {
     // event.preventDefault();
     let obj = {
+      img: event.target.img.value,
       seriesName: event.target.seriesName.value,
       description: event.target.description.value,
       rating: event.target.rating.value,
@@ -146,8 +151,11 @@ class HiddenGems extends React.Component {
 
                   <Col>
                     <Card style={{ width: '18rem' }}>
-                      <Card.Img variant="top" src="https://wallpaper.dog/film" />
                       <Card.Body>
+                        <Card.Img src={val.img} onError={({ currentTarget }) => {
+                          currentTarget.onerror = null; // prevents looping
+                          currentTarget.src = "https://images-ext-1.discordapp.net/external/n726E5DLglvMSVlpSnNbLhdrJ_oIgIdlDU6XaqYMONc/https/i.imgur.com/LANaf1p.png?width=726&height=580";
+                        }}  ></Card.Img>
                         <Card.Title>Name: {val.seriesName}</Card.Title>
                         <Card.Text>Description: {val.description}</Card.Text>
                         <Card.Text>Rating: {val.rating}</Card.Text>
