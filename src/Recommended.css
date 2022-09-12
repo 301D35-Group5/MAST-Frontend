@@ -1,0 +1,52 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+    --ourRed: #F05454;
+    --ourNavy: #30475E;
+    --ourSilver: #F5F5F5;
+    color: var(--ourSilver);
+}
+
+
+.recCol{
+    margin: 20px;
+
+}
+.cardo{
+    background-color: var(--ourNavy);
+    color: var(--ourSilver);
+    align-items: center;
+    align-content: center;
+    border-radius: 15px;
+
+}
+.cardo button{
+    margin: 20px;
+    background-color: transparent; 
+    border-color:var(--ourRed);
+    color: var(--ourSilver);
+    padding: 13px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.recBtn{
+    margin: 20px;
+    background-color: var(--ourNavy); 
+    border: none;
+    color: var(--ourSilver);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.recBtn{
+    opacity: 0.8;
+  }
