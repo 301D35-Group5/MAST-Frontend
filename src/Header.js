@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import Dropdown from "react-bootstrap/Dropdown";
+import Login from './Login';
+import LogOut from './LogOut';
+import {  NavItem } from 'react-bootstrap';
+import logo from './logo.png';
+
 
 class Header extends React.Component {
   render() {
@@ -21,41 +26,47 @@ class Header extends React.Component {
         <div className="container">
           <div className="inner-content">
             <div className="brand">
-              <Link to="/">Movie WatchList</Link>
+            <Link to="/" className="MAST"><img src={logo} alt="Logo" className="Logo"></img></Link>
             </div>
 
             <ul className="nav-links">
-              <li>
-                <Link to="/">Watch List</Link>
-              </li>
-              <li>
-                <Link to="/HiddenGems">HiddenGems</Link>
-              </li>
-              <li>
-                <Link to="/Anime" className="btn">
-                  + Anime
-                </Link>
-              </li>
-              <li>
-                <Link to="/TV" className="btn">
-                  + TV
-                </Link>
-              </li>
+              
+              
               <li>
                 <Dropdown>
                   <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
                     Explore
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
+                  <Dropdown.Menu variant="dark">
                     <Dropdown.Item href="./anime">Anime</Dropdown.Item>
-                    <Dropdown.Item href="./TV">
-                      Series
-                    </Dropdown.Item>
-                  
+                    <Dropdown.Item href="./TV">Series</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </li>
+              <li>
+                <Link to="/HiddenGems">Recommendations</Link>
+              </li>
+              
+              <li>
+                <Link to="/Profile">
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <Link to="/About">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <NavItem variant="secondary" style={{ color: "grey", paddingLeft: "25px" }}>
+                  <Login />
+                </NavItem>
+                <NavItem variant="secondary" style={{ color: "grey", paddingLeft: "25px" }}>
+                  <LogOut />
+                </NavItem>
+              </li>
+              
             </ul>
           </div>
         </div>

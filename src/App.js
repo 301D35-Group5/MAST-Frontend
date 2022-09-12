@@ -8,6 +8,7 @@ import HiddenGems from './HiddenGems';
 import About from './About';
 import Anime from './Anime';
 import TV from './TV';
+import Profile from './Profile';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -53,6 +54,11 @@ class App extends React.Component {
             <Route 
               exact path="/TV"
               element={<TV />}
+            >
+            </Route>
+            <Route 
+              exact path="/Profile"
+              element={<Profile />}
             >
             </Route>
           </Routes>

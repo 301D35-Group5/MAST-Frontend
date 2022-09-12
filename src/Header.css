@@ -1,22 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+*{
+  font-family:'Times New Roman', Times, serif;
+  padding: 0;
+  margin: 0;
+  --ourRed: #F05454;
+  --ourNavy: #30475E;
+  --ourSilver: #F5F5F5;
+  color: var(--ourSilver);
+}
 
 :root {
   --primary: #666665;
   --secondary: #5d5d5d;
   --black: rgb(0, 0, 0);
+
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family:'Times New Roman', Times, serif;
   padding: 0;
   margin: 0;
+  
 }
 
 .container {
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-right: auto;
   margin-left: auto;
+  
+
 }
 
 @media (min-width: 768px) {
@@ -84,20 +99,38 @@ header .inner-content {
   padding: 10px 0;
 }
 
+
 @media(max-width: 760px){
   header .inner-content{flex-direction: column !important;}
-  .brand{margin-bottom: 30px;}
+  
 }
 
-header a {
+header .nav-links a {
   color: var(--white);
   font-size: 1.25rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-header a:hover {
+header .nav-links a:hover {
   opacity: 0.7;
+  text-decoration: underline;
+  width: 100%;
+  text-decoration-color: var(--ourRed);
+  
+}
+header .nav-links .btn{
+  color: var(--ourRed);
+}
+
+header .brand{
+  display: block;
+
+}
+header .brand .Logo{
+  width: 75px; 
+  display: block; 
+  text-indent: -9999px;
 }
 
 header .brand a {
@@ -111,12 +144,16 @@ header .nav-links {
   list-style: none;
   display: flex;
   align-items: center;
+
 }
 
-header .nav-links li {
+header .nav-links a{
   display: inline-block;
   margin-right: 30px;
+  transition: all 0.3s ease;
+  
 }
+
 
 header .nav-links li:last-child {
   margin-right: 0;

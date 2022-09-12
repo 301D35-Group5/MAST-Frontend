@@ -11,8 +11,7 @@ class Footer extends React.Component {
       <footer class="footer">
   <div class="footer-left col-md-4 col-sm-6">
     <p class="about">
-      <span> About the company</span> Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,
-      ultricies feugiat leo. Suspendisse tellus elit, pharetra in hendrerit ut, aliquam quis augue. Nam ut nibh mollis, tristique ante sed, viverra massa.
+      <span> About the company</span> Mast is a website that allows you to find the best anime and TV shows to watch. We have a wide variety of shows to choose from. We also have a recommendation system that will help you find the best shows to watch.
     </p>
     <div class="icons">
       <a href="#"><i class="fa fa-facebook"></i></a>
@@ -25,7 +24,7 @@ class Footer extends React.Component {
   <div class="footer-center col-md-4 col-sm-6">
     <div>
       <i class="fa fa-map-marker"></i>
-      <p><span> Street name and number</span> City, Country</p>
+      <p><span> Street name and number</span> Amman, Jordan</p>
     </div>
     <div>
       <i class="fa fa-phone"></i>
@@ -33,11 +32,11 @@ class Footer extends React.Component {
     </div>
     <div>
       <i class="fa fa-envelope"></i>
-      <p><a href="#"> office@company.com</a></p>
+      <p><a href="#"> </a></p>
     </div>
   </div>
   <div class="footer-right col-md-4 col-sm-6">
-    <h2> Company<span> logo</span></h2>
+    <h2> MAST<span> logo</span></h2>
     <p class="menu">
       <a href="#"> Home</a> |
       <a href="#"> About</a> |
@@ -46,7 +45,7 @@ class Footer extends React.Component {
       <a href="#"> News</a> |
       <a href="#"> Contact</a>
     </p>
-    <p class="name"> Company Name &copy; 2016</p>
+    <p class="name"> MAST &copy; 2016</p>
   </div>
 </footer>
     )

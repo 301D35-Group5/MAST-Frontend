@@ -73,7 +73,7 @@ h2 span {
   color: #aaa;
   margin-left: 10px;
 }
-h2:after {
+/* h2:after {
   content: '';
   z-index: 1;
   bottom: 50%;
@@ -81,8 +81,8 @@ h2:after {
   height: 2px;
   left: 0;
   right: 0;
-  background: #373d47;
-}
+  background: #373d47; */
+/* } */
 .cards,
 .news {
   flex-flow: row wrap;
