@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import AddForm from './AddForm';
 import { Col, Row } from 'react-bootstrap';
-import "./Recommended.css";
+import "./Recommendations.css";
 
 
 class HiddenGems extends React.Component {
