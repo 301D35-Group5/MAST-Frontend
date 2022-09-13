@@ -5,6 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
 class UpdateForm extends React.Component {
+
+  
     render(){
         return (
           <Modal show={this.props.show} onHide={this.props.handleClose}>
