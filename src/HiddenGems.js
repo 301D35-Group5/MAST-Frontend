@@ -1,12 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
-import axios from "axios";
-import UpdateForm from "./UpdateForm";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import AddForm from "./AddForm";
-import { Col, Row } from "react-bootstrap";
-import "./Recommendations.css";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import axios from 'axios';
+import UpdateForm from './UpdateForm';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import AddForm from './AddForm';
+import { Col, Row } from 'react-bootstrap';
+import "./Recommended.css";
+
 
 class HiddenGems extends React.Component {
   constructor(props) {
@@ -128,10 +130,9 @@ class HiddenGems extends React.Component {
           <button type='submit'>Add</button>
         </form> */}
         <h2>Recommendations:</h2>
-        <Button variant="primary" onClick={this.openAddForm} className="recBtn">
-          {" "}
-          + Add a recommendation
-        </Button>
+
+        <Button variant="primary" onClick={this.openAddForm} className="recBtn"> + Add a recommendation</Button>
+
         <Row xs={1} md={4} className="g-4">
           {this.state.recoArr.map((val) => {
             return (
@@ -144,8 +145,8 @@ class HiddenGems extends React.Component {
                 <button onClick={() => this.deleteReco(val._id)}>delete</button>
               <button onClick={() => this.openForm(val)}>Update</button> */}
 
-                  <Col className="recCol">
-                    <Card className="cardo" style={{ width: "18rem" }}>
+                  <Col className='recCol'>
+                    <Card className='cardo' style={{ width: '18rem' }}>
                       <Card.Body>
                         <Card.Img
                           src={val.img}

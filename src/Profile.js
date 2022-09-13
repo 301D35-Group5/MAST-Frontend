@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { Button, Row } from 'react-bootstrap';
-import './Profile.css';
 
+import "./Profile.css";
 
 class Profile extends Component {
 
