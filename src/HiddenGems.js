@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import AddForm from './AddForm';
 import { Col, Row } from 'react-bootstrap';
+import "./Recommended.css";
 
 
 class HiddenGems extends React.Component {
@@ -135,8 +136,8 @@ class HiddenGems extends React.Component {
           <input type="text" name="year" placeholder="Year" />
           <button type='submit'>Add</button>
         </form> */}
-        <h2>CreaTORS, rECOMMENDATIONS:</h2>
-        <Button variant="primary" onClick={this.openAddForm}>ADD your RECOMMENDATIONS</Button>
+        <h2>Recommendations:</h2>
+        <Button variant="primary" onClick={this.openAddForm} className="recBtn"> + Add a recommendation</Button>
         <Row xs={1} md={4} className="g-4">
           {this.state.recoArr.map((val) => {
             return (
@@ -149,8 +150,8 @@ class HiddenGems extends React.Component {
                 <button onClick={() => this.deleteReco(val._id)}>delete</button>
               <button onClick={() => this.openForm(val)}>Update</button> */}
 
-                  <Col>
-                    <Card style={{ width: '18rem' }}>
+                  <Col className='recCol'>
+                    <Card className='cardo' style={{ width: '18rem' }}>
                       <Card.Body>
                         <Card.Img src={val.img} onError={({ currentTarget }) => {
                           currentTarget.onerror = null; // prevents looping
