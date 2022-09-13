@@ -27,6 +27,17 @@ class Anime extends React.Component {
 
       .catch((err) => { });
   };
+  componentDidMount() {
+    axios
+      .get(`http://localhost:3001/bestanime?filter=voted`)
+      .then((res) => {
+        console.log(this.state.filter);
+
+        this.setState({ anime: res.data });
+      })
+
+      .catch((err) => { });
+  };
   showGenre = (e) => {
     e.preventDefault();
     axios
@@ -71,8 +82,8 @@ class Anime extends React.Component {
     const { isAuthenticated } = this.props.auth0;
     return (
       <>
-        <Form onSubmit={this.showGenre}>
-          <FormSelect
+        <Form onSubmit={this.showGenre} className='genreForm'>
+          <FormSelect className="formOptions"
             onChange={(e) => this.setState({ genre: e.target.value })}
           >
             <option value="Action">Action</option>
@@ -86,13 +97,13 @@ class Anime extends React.Component {
             <option value="Sci-Fi">Sci-Fi</option>
             <option value="Thriller">Thriller</option>
           </FormSelect>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" className="submitButton">Submit</Button>
         </Form>
         <Form onSubmit={this.showBest}>
-          <button onClick={() => this.setState({ filter: "watched" })}>
+          <button className="watchedBtn" onClick={() => this.setState({ filter: "watched" })}>
             Most Watched
           </button>
-          <button onClick={() => this.setState({ filter: "voted" })}>
+          <button className="watchedBtn" onClick={() => this.setState({ filter: "voted" })}>
             Highest Voted
           </button>
           <br></br>
@@ -130,8 +141,8 @@ class Anime extends React.Component {
             <div class="cards">
               <figure class="card">
                 <img src={anime.poster} alt="Poster" />
-
-                <figcaption>{anime.title} {isAuthenticated && <Button onClick={this.addProf} title={anime.title} name={anime.poster}>Add watch list</Button>} </figcaption>
+                <figcaption><p>{anime.title}</p> <p>Rating: {anime.malRating}</p>{isAuthenticated && <Button onClick={this.addProf} className="" title={anime.title} name={anime.poster} >Add watch list</Button>} </figcaption>
+                
                 
               </figure>
             </div>

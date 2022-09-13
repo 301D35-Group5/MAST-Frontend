@@ -1,3 +1,58 @@
+*{
+  font-family: 'Times New Roman', Times, serif;
+  padding: 0;
+  margin: 0;
+  --ourRed: #F05454;
+  --ourNavy: #30475E;
+  --ourSilver: #F5F5F5;
+  color: var(--ourSilver);
+}
+.genreForm{
+  width: 40%;
+  margin: auto;
+  color: #30475E;
+  display: flex;
+  
+}
+
+.genreForm select{
+  color: var(--ourSilver);
+  background-color: rgb(48, 71, 94, 0.3); 
+  border-color:var(--ourRed);
+  color: var(--ourSilver);
+}
+.genreForm option{
+  color: var(--ourNavy);
+}
+.submitButton{
+  margin: 20px;
+  background-color: transparent; 
+  border-color:var(--ourRed);
+  color: var(--ourSilver);
+  padding: 13px 13px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  
+}
+.watchedBtn{
+  background-color: var(--ourNavy); 
+  border: none;
+  color: var(--ourSilver);
+  padding: 15px 32px;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
 .abs,
 h2:after,
 .cards .card figcaption,
@@ -6,6 +61,8 @@ h2:after,
 .news .card:after,
 .news .article figcaption {
   position: absolute;
+  text-shadow: 2px 2px #24282f;
+
 }
 .rel,
 h2,

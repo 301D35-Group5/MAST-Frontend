@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import { withAuth0 } from '@auth0/auth0-react';
 import { Button, Form, FormGroup, FormLabel, FormSelect } from "react-bootstrap";
 import './Anime.css';
+import Anime from "./Anime";
 class TV extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,18 @@ class TV extends React.Component {
 
 
   }
+componentDidMount = () => {
+  axios
+      .get(`http://localhost:3001/BestShows?filter=voted`)
+      .then((res) => {
+        console.log(this.state.filter);
+
+        this.setState({ showData: res.data });
+      })
+
+      .catch((err) => {
+
+      });}
 
   showGenre = (e) => {
     e.preventDefault();
@@ -81,10 +94,10 @@ class TV extends React.Component {
     return (
       <>
 
-        <Form onSubmit={this.showGenre}>
+        <Form onSubmit={this.showGenre} className='genreForm'>
           <FormGroup>
             <FormLabel>Genre</FormLabel>
-            <FormSelect onChange={(e) => this.setState({ genre: e.target.value })}>
+            <FormSelect className="formOptions" onChange={(e) => this.setState({ genre: e.target.value })}>
               <option value="Action">Action</option>
               <option value="Adventure">Adventure</option>
               <option value="Comedy">Comedy</option>
@@ -98,18 +111,18 @@ class TV extends React.Component {
           </FormGroup>
           <FormGroup>
             <FormLabel>Year</FormLabel>
-            <FormSelect onChange={(e) => this.setState({ date: e.target.value })}>
+            <FormSelect className="formOptions" onChange={(e) => this.setState({ date: e.target.value })}>
               <option value="2000s">2000s</option>
               <option value="2010s">2010s</option>
 
             </FormSelect>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className="submitButton">Submit</Button>
           </FormGroup>
         </Form>
           <br></br>
             <Form onSubmit={this.showBest}>
-              <button onClick={() => this.setState({ filter: "watched" })}>Most Watched</button>
-              <button onClick={() => this.setState({ filter: "voted" })}>Highest Voted</button>
+              <button className="watchedBtn" onClick={() => this.setState({ filter: "watched" })}>Most Watched</button>
+              <button className="watchedBtn" onClick={() => this.setState({ filter: "voted" })}>Highest Voted</button>
               <h2>Best Shows</h2>
               <br></br>
 
@@ -122,7 +135,7 @@ class TV extends React.Component {
                   <figure class="card">
                     <img src={item.poster} />
     
-                    <figcaption>{item.title} {isAuthenticated && <Button onClick={this.addProf} title={item.title} name={item.poster}>Add watch list</Button>}</figcaption>
+                  <figcaption><p>{item.title}</p> <p>Rating: {item.rating}</p> {isAuthenticated && <Button onClick={this.addProf} title={item.title} name={item.poster}>Add watch list</Button>}</figcaption>
                   </figure>
                   
                 </div>
