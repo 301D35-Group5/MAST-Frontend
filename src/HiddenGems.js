@@ -1,3 +1,4 @@
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import axios from 'axios';
@@ -10,8 +11,6 @@ import "./Recommended.css";
 
 
 class HiddenGems extends React.Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
@@ -19,25 +18,24 @@ class HiddenGems extends React.Component {
       showForm: false,
       showAddForm: false,
       selectedReco: {},
-      img: null
-    }
+      img: null,
+    };
   }
 
   componentDidMount = () => {
-    console.log(process.env.REACT_APP_URL)
+    console.log(process.env.REACT_APP_URL);
     axios
       .get(`http://localhost:3001/getReco`)
       .then((result) => {
-
         console.log(result.data);
         this.setState({
-          recoArr: result.data
-        })
+          recoArr: result.data,
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
   addReco = (event) => {
     event.preventDefault();
@@ -46,51 +44,47 @@ class HiddenGems extends React.Component {
       seriesName: event.target.seriesName.value,
       description: event.target.description.value,
       rating: event.target.rating.value,
-      year: event.target.year.value
+      year: event.target.year.value,
     };
     axios
       .post(`http://localhost:3001/addReco`, obj)
       .then((result) => {
         this.setState({
           recoArr: result.data,
-
-        })
+        });
       })
 
       .catch((err) => {
-        console.log(err)
-      })
-
-  }
-
+        console.log(err);
+      });
+  };
 
   deleteReco = (id) => {
     axios
       .delete(`http://localhost:3001/deleteReco/${id}`)
       .then((result) => {
         this.setState({
-          recoArr: result.data
-        })
+          recoArr: result.data,
+        });
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }
-
+        console.log(err);
+      });
+  };
 
   openForm = (val) => {
     this.setState({
       showForm: true,
-      selectedReco: val
-    })
-  }
+      selectedReco: val,
+    });
+  };
 
   handleClose = () => {
     this.setState({
       showForm: false,
-      showAddForm: false
-    })
-  }
+      showAddForm: false,
+    });
+  };
 
   updateReco = (event) => {
     // event.preventDefault();
@@ -99,31 +93,30 @@ class HiddenGems extends React.Component {
       seriesName: event.target.seriesName.value,
       description: event.target.description.value,
       rating: event.target.rating.value,
-      year: event.target.year.value
+      year: event.target.year.value,
     };
 
     const id = this.state.selectedReco._id;
-    console.log(id)
+    console.log(id);
     axios
       .put(`http://localhost:3001/updateReco/${id}`, obj)
       .then((result) => {
         this.setState({
-          recoArr: result.data
+          recoArr: result.data,
         });
         this.handleClose();
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }
+        console.log(err);
+      });
+  };
 
   openAddForm = (val) => {
     this.setState({
       showAddForm: true,
-      selectedReco: val
-    })
-  }
-
+      selectedReco: val,
+    });
+  };
 
   render() {
     return (
@@ -137,7 +130,9 @@ class HiddenGems extends React.Component {
           <button type='submit'>Add</button>
         </form> */}
         <h2>Recommendations:</h2>
+
         <Button variant="primary" onClick={this.openAddForm} className="recBtn"> + Add a recommendation</Button>
+
         <Row xs={1} md={4} className="g-4">
           {this.state.recoArr.map((val) => {
             return (
@@ -153,25 +148,37 @@ class HiddenGems extends React.Component {
                   <Col className='recCol'>
                     <Card className='cardo' style={{ width: '18rem' }}>
                       <Card.Body>
-                        <Card.Img src={val.img} onError={({ currentTarget }) => {
-                          currentTarget.onerror = null; // prevents looping
-                          currentTarget.src = "https://images-ext-1.discordapp.net/external/n726E5DLglvMSVlpSnNbLhdrJ_oIgIdlDU6XaqYMONc/https/i.imgur.com/LANaf1p.png?width=726&height=580";
-                        }}  ></Card.Img>
+                        <Card.Img
+                          src={val.img}
+                          onError={({ currentTarget }) => {
+                            currentTarget.onerror = null; // prevents looping
+                            currentTarget.src =
+                              "https://images-ext-1.discordapp.net/external/n726E5DLglvMSVlpSnNbLhdrJ_oIgIdlDU6XaqYMONc/https/i.imgur.com/LANaf1p.png?width=726&height=580";
+                          }}
+                        ></Card.Img>
                         <Card.Title>Name: {val.seriesName}</Card.Title>
                         <Card.Text>Description: {val.description}</Card.Text>
                         <Card.Text>Rating: {val.rating}</Card.Text>
                         <Card.Text>Year: {val.year}</Card.Text>
-                        <Button variant="primary" onClick={() => this.deleteReco(val._id)}>Delete</Button>
-                        <Button variant="primary" onClick={() => this.openForm(val)}>Update</Button>
+                        <Button
+                          variant="primary"
+                          onClick={() => this.deleteReco(val._id)}
+                        >
+                          Delete
+                        </Button>
+                        <Button
+                          variant="primary"
+                          onClick={() => this.openForm(val)}
+                        >
+                          Update
+                        </Button>
                       </Card.Body>
                     </Card>
                   </Col>
                 </div>
               </>
             );
-          }
-          )
-          }
+          })}
         </Row>
 
         <UpdateForm
@@ -187,10 +194,8 @@ class HiddenGems extends React.Component {
           selectedReco={this.state.selectedReco}
         />
       </div>
-
-    )
+    );
   }
 }
-
 
 export default HiddenGems;

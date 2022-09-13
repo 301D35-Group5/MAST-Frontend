@@ -27,6 +27,17 @@ class Anime extends React.Component {
 
       .catch((err) => { });
   };
+  componentDidMount() {
+    axios
+      .get(`http://localhost:3001/bestanime?filter=voted`)
+      .then((res) => {
+        console.log(this.state.filter);
+
+        this.setState({ anime: res.data });
+      })
+
+      .catch((err) => { });
+  };
   showGenre = (e) => {
     e.preventDefault();
     axios
@@ -130,8 +141,8 @@ class Anime extends React.Component {
             <div class="cards">
               <figure class="card">
                 <img src={anime.poster} alt="Poster" />
-
-                <figcaption>{anime.title} {isAuthenticated && <Button onClick={this.addProf} title={anime.title} name={anime.poster}>Add watch list</Button>} </figcaption>
+                <figcaption><p>{anime.title}</p> <p>Rating: {anime.malRating}</p>{isAuthenticated && <Button onClick={this.addProf} className="" title={anime.title} name={anime.poster} >Add watch list</Button>} </figcaption>
+                
                 
               </figure>
             </div>

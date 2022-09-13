@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { Button, Row } from 'react-bootstrap';
+
 import "./Profile.css";
 
 class Profile extends Component {
@@ -62,10 +63,13 @@ class Profile extends Component {
                 <h2>Welcome to Profile</h2>
                 <div style={{alignItems: 'center'}}>
                 <Card style={{ width: '20rem' }}>
-                    <Card.Img variant="top" alt="Photo" src={user.picture} />
+                    <Card.Img variant="top" alt="Photo" src={user.picture}
+                          onError={({ currentTarget }) => {
+                            currentTarget.onerror = null; // prevents looping
+                            currentTarget.src ="https://imgur.com/awGS5y3"; } } />
                     <Card.Body>
-                        <Card.Title>☺️{user.name}☺️</Card.Title>
-                        <Card.Text>E-mail: {user.email}</Card.Text>
+                        <Card.Title className='userInfo'>☺️{user.name}☺️</Card.Title>
+                        <Card.Text className='userInfo'>E-mail: {user.email}</Card.Text>
                     </Card.Body>
                 </Card>
                 </div>
@@ -80,7 +84,7 @@ class Profile extends Component {
                             currentTarget.src = "https://images-ext-1.discordapp.net/external/n726E5DLglvMSVlpSnNbLhdrJ_oIgIdlDU6XaqYMONc/https/i.imgur.com/LANaf1p.png?width=726&height=580";
                           }}  ></Card.Img>
                           <Card.Body>
-                              <Card.Text>title: {value.title}</Card.Text>
+                              <Card.Text className='userInfo'> Title: {value.title}</Card.Text>
                           </Card.Body>
                           <Button variant="primary" onClick={() => this.deleteProf(value._id)}>Delete</Button>
                       </Card>
