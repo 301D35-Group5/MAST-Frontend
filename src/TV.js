@@ -18,11 +18,13 @@ class TV extends React.Component {
   }
 componentDidMount = () => {
   axios
-      .get(`http://localhost:3001/BestShows?filter=voted`)
+      .get(`${process.env.REACT_APP_SERVER}BestShows?filter=voted`)
       .then((res) => {
+        
         console.log(this.state.filter);
 
-        this.setState({ showData: res.data });
+        this.setState({ showData: res.data,
+          });
       })
 
       .catch((err) => {
@@ -31,10 +33,11 @@ componentDidMount = () => {
 
   showGenre = (e) => {
     e.preventDefault();
+    
     axios
-      .get(`http://localhost:3001/Shows?genre=${this.state.genre}&year=${this.state.date}`)
+      .get(`${process.env.REACT_APP_SERVER}Shows?genre=${this.state.genre}&year=${this.state.date}`)
       .then((res) => {
-        console.log(this.state.genre);
+        
         this.setState({ showData: res.data });
       })
       .catch((err) => {
@@ -45,7 +48,7 @@ componentDidMount = () => {
     e.preventDefault();
 
     axios
-      .get(`http://localhost:3001/BestShows?filter=${this.state.filter}`)
+      .get(`${process.env.REACT_APP_SERVER}BestShows?filter=${this.state.filter}`)
       .then((res) => {
         console.log(this.state.filter);
 
@@ -74,7 +77,7 @@ componentDidMount = () => {
       };
       console.log(obj)
       axios
-        .post(`http://localhost:3001/addProf`, obj)
+        .post(`${process.env.REACT_APP_SERVER}addProf`, obj)
         .then((result) => {
 
         })

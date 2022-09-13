@@ -20,7 +20,7 @@ class Profile extends Component {
     const email = user.email;
     console.log(process.env.REACT_APP_URL);
     axios
-      .get(`http://localhost:3001/getProf?email=${email}`)
+      .get(`${process.env.REACT_APP_SERVER}getProf?email=${email}`)
       .then((result) => {
         console.log(result.data);
         this.setState({
@@ -37,7 +37,7 @@ class Profile extends Component {
     const email = user.email;
     console.log(id);
     axios
-      .delete(`http://localhost:3001/deleteProf?email=${email}&id=${id}`)
+      .delete(`${process.env.REACT_APP_SERVER}deleteProf?email=${email}&id=${id}`)
       .then((result) => {
         this.setState({
           profArr: result.data,

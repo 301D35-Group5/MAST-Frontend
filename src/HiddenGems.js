@@ -42,7 +42,7 @@ class HiddenGems extends React.Component {
     
     console.log(process.env.REACT_APP_URL);
     axios
-      .get(`http://localhost:3001/getReco`)
+      .get(`${process.env.REACT_APP_SERVER}getReco`)
       .then((result) => {
         console.log(result.data);
         this.setState({
@@ -68,7 +68,7 @@ class HiddenGems extends React.Component {
       email: user.email,
     };
     axios
-      .post(`http://localhost:3001/addReco`, obj)
+      .post(`${process.env.REACT_APP_SERVER}addReco`, obj)
       .then((result) => {
         this.setState({
           recoArr: result.data,
@@ -82,7 +82,7 @@ class HiddenGems extends React.Component {
 
   deleteReco = (id) => {
     axios
-      .delete(`http://localhost:3001/deleteReco/${id}`)
+      .delete(`${process.env.REACT_APP_SERVER}deleteReco/${id}`)
       .then((result) => {
         this.setState({
           recoArr: result.data,
@@ -122,7 +122,7 @@ class HiddenGems extends React.Component {
     const id = this.state.selectedReco._id;
     console.log(id);
     axios
-      .put(`http://localhost:3001/updateReco/${id}`, obj)
+      .put(`${process.env.REACT_APP_SERVER}updateReco/${id}`, obj)
       .then((result) => {
         this.setState({
           recoArr: result.data,

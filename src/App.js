@@ -2,8 +2,6 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
-import Explore from './Explore';
-import Events from './Events';
 import HiddenGems from './HiddenGems';
 import About from './About';
 import Anime from './Anime';
@@ -29,15 +27,8 @@ class App extends React.Component {
               element={<Home />}
             >
             </Route>
+            
             <Route 
-              exact path="/Explore"
-              element={<Explore />}
-            >
-            </Route><Route 
-              exact path="/Events"
-              element={<Events />}
-            >
-            </Route><Route 
               exact path="/HiddenGems"
               element={<HiddenGems />}
             >
