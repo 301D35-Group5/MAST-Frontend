@@ -9,12 +9,12 @@ class UpdateForm extends React.Component {
         return (
           <Modal show={this.props.show} onHide={this.props.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Update RECOMMENDATIONS</Modal.Title>
+              <Modal.Title className='modalLabel'>Update Recommendation</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form onSubmit={this.props.updateReco}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Series name</Form.Label>
+                  <Form.Label className='modalLabel'>Series name</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Series name"
@@ -23,7 +23,7 @@ class UpdateForm extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Description</Form.Label>
+                  <Form.Label className='modalLabel'>Description</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Description"
@@ -32,7 +32,7 @@ class UpdateForm extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Rating</Form.Label>
+                  <Form.Label className='modalLabel'>Rating</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Rating"
@@ -41,7 +41,7 @@ class UpdateForm extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Year</Form.Label>
+                  <Form.Label className='modalLabel'>Year</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Year"
@@ -49,8 +49,8 @@ class UpdateForm extends React.Component {
                     defaultValue={this.props.selectedReco.year}
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                  Update the RECOMMENDATIONS
+                <Button variant="secondary" type="submit">
+                  Update the Recommendation
                 </Button>
               </Form>
             </Modal.Body>

@@ -8,3 +8,149 @@
     font-size: 20px;
 
 }
+
+header {
+	position:relative;
+	left:0;
+	top:0;
+	width:100%;
+	min-height:120px;
+	padding:50px 0;
+	color:#fff;
+	    background: #24282F url(https://www.athenadesignstudio.com/plugins/switch/images/bg.jpg) no-repeat center center;
+	margin-bottom:30px
+}
+
+/* Logo */
+header .logo {
+	clear:both;
+    display:block;
+	text-align:center;
+    padding-bottom:10px;
+}
+
+/* Title */
+header h1 {
+    font-weight:300;
+    font-size:24px;
+    color:#eee;	
+	letter-spacing:2px;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0 !important;
+	padding-bottom:25px;
+}
+
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile-card-4 {
+    max-width: 300px;
+    background-color: #24282F;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.profile-card-4 img {
+    transition: all 0.25s linear;
+}
+
+.profile-card-4 .profile-content {
+    position: relative;
+    padding: 15px;
+    background-color: #24282F;
+}
+
+.profile-card-4 .profile-name {
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: -70px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+.profile-card-4 .profile-name p {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+}
+
+.profile-card-4 .profile-description {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 10px;
+}
+
+.profile-card-4 .profile-overview {
+    padding: 15px 0px;
+}
+
+.profile-card-4 .profile-overview p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #24282F;
+}
+
+.profile-card-4 .profile-overview h4 {
+    color: #000000;
+    font-weight: bold;
+}
+
+.profile-card-4 .profile-content::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    background-color: #24282F;
+    z-index: 0;
+    transform: skewY(3deg);
+}
+
+.profile-card-4:hover img {
+    transform: rotate(5deg) scale(1.1, 1.1);
+    filter: brightness(110%);
+}
+
+
+
+.profile-description p{
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+

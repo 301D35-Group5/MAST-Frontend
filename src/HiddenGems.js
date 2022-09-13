@@ -1,4 +1,3 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import axios from 'axios';
@@ -8,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import AddForm from './AddForm';
 import { Col, Row } from 'react-bootstrap';
 import "./Recommendations.css";
+
 
 
 class HiddenGems extends React.Component {
@@ -121,7 +121,6 @@ class HiddenGems extends React.Component {
   render() {
     return (
       <div>
-        <h2>The Hidden Gems</h2>
         {/* <form onSubmit={this.addReco}>
           <input type="text" name="seriesName" placeholder="Series name" />
           <input type="text" name="description" placeholder="Description" />
@@ -131,7 +130,7 @@ class HiddenGems extends React.Component {
         </form> */}
         <h2>Recommendations:</h2>
 
-        <Button variant="primary" onClick={this.openAddForm} className="recBtn"> + Add a recommendation</Button>
+        <Button variant="primary" onClick={this.openAddForm} className="recBtn">Add Recommendation</Button>
 
         <Row xs={1} md={4} className="g-4">
           {this.state.recoArr.map((val) => {
@@ -162,16 +161,17 @@ class HiddenGems extends React.Component {
                         <Card.Text>Year: {val.year}</Card.Text>
                         <Button
                           variant="primary"
-                          onClick={() => this.deleteReco(val._id)}
-                        >
-                          Delete
-                        </Button>
-                        <Button
-                          variant="primary"
                           onClick={() => this.openForm(val)}
                         >
                           Update
                         </Button>
+                        <Button
+                          variant="primary"
+                          onClick={() => this.deleteReco(val._id)}
+                        >
+                          Delete
+                        </Button>
+
                       </Card.Body>
                     </Card>
                   </Col>

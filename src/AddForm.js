@@ -4,28 +4,30 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import logo from './logo.png'
-
+import './Recommendations.css';
 
 class AddForm extends React.Component {
     render(){
         return (
-          <Modal show={this.props.show} onHide={this.props.handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Update RECOMMENDATIONS</Modal.Title>
+          <Modal show={this.props.show} onHide={this.props.handleClose} 
+          >
+          
+            <Modal.Header  closeButton>
+              <Modal.Title className="modalLabel" >Update Recommendations</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form onSubmit={this.props.addReco}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>img</Form.Label>
+                  <Form.Label className="modalLabel">Image URL</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="img"
+                    placeholder="Image URL"
                     name="img"
                     defaultValue={this.props.selectedReco.img || logo.png}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Series name</Form.Label>
+                  <Form.Label className="modalLabel">Series name</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Series name"
@@ -34,7 +36,7 @@ class AddForm extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Description</Form.Label>
+                  <Form.Label className="modalLabel">Description</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Description"
@@ -43,7 +45,7 @@ class AddForm extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Rating</Form.Label>
+                  <Form.Label className="modalLabel">Rating</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Rating"
@@ -52,7 +54,7 @@ class AddForm extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Year</Form.Label>
+                  <Form.Label className="modalLabel">Year</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Year"
@@ -60,8 +62,8 @@ class AddForm extends React.Component {
                     defaultValue={this.props.selectedReco.year}
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={this.props.handleClose}>
-                  ADD the RECOMMENDATIONS
+                <Button variant="secondary" type="submit" onClick={this.props.handleClose}>
+                  Add to the Recommendations
                 </Button>
               </Form>
             </Modal.Body>

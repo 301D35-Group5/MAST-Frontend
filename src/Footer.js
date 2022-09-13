@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import { ModalFooter } from 'react-bootstrap';
 import logo from './logo.png'
 
 class Footer extends React.Component {
