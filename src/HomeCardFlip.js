@@ -10,7 +10,7 @@ render(){
     return(
 <>
 
-<Row xs={1} md={3} className="g-4">
+<Row xs={1} md={3} lg={3} xl={3} xxl={3} className="g-4">
 {/* flip-card-container  */}
 <Col>
 <div class="flip-card-container" >

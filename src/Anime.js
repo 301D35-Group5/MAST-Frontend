@@ -74,15 +74,17 @@ class Anime extends React.Component {
 
 
 
-
-
-
-
   render() {
     const { isAuthenticated } = this.props.auth0;
     return (
-      <>
-        <Form onSubmit={this.showGenre} className='genreForm'>
+      <div className="Body1">
+      <Form className="watchedForm" onSubmit={this.showBest}>
+          <button className="watchedBtn" onClick={() => this.setState({ filter: "watched" })}>
+            Most Watched
+          </button>
+          <button className="watchedBtn" onClick={() => this.setState({ filter: "voted" })}>
+            Highest Voted
+          </button>
           <FormSelect className="formOptions"
             onChange={(e) => this.setState({ genre: e.target.value })}
           >
@@ -97,19 +99,13 @@ class Anime extends React.Component {
             <option value="Sci-Fi">Sci-Fi</option>
             <option value="Thriller">Thriller</option>
           </FormSelect>
+          <Form onSubmit={this.showGenre} className='genreForm'>
           <Button type="submit" className="submitButton">Submit</Button>
         </Form>
-        <Form onSubmit={this.showBest}>
-          <button className="watchedBtn" onClick={() => this.setState({ filter: "watched" })}>
-            Most Watched
-          </button>
-          <button className="watchedBtn" onClick={() => this.setState({ filter: "voted" })}>
-            Highest Voted
-          </button>
-          <br></br>
-
-          <br></br>
-          <br></br>
+          </Form>
+        
+        
+        
 
           {/* <Row xs={1} md={4} className="g-4">
             {this.state.anime.map((anime) => (
@@ -124,7 +120,7 @@ class Anime extends React.Component {
                   </Col>
                   ))}
                 </Row> */}
-        </Form>
+        
 
 
         <Row xs={1} md={4} className="g-4">
@@ -148,7 +144,7 @@ class Anime extends React.Component {
             </div>
           ))}
         </Row>
-      </>
+      </div>
     );
   }
 }

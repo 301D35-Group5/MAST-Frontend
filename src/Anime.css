@@ -8,50 +8,66 @@
   color: var(--ourSilver);
 }
 .genreForm{
-  width: 40%;
   margin: auto;
+  margin-left: 15px;
   color: #30475E;
-  display: flex;
-  
 }
 
-.genreForm select{
+.watchedForm option{
+  color: var(--ourNavy);
+}
+.submitButton{
+  margin: auto;
+  background-color: transparent; 
+  border-color:var(--ourRed);
+  color: var(--ourSilver);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.submitButton:hover{
+  background-color: transparent;
+}
+.watchedForm{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-left: 130px;
+
+}
+.watchedForm select{
   color: var(--ourSilver);
   background-color: rgb(48, 71, 94, 0.3); 
   border-color:var(--ourRed);
   color: var(--ourSilver);
-}
-.genreForm option{
-  color: var(--ourNavy);
-}
-.submitButton{
-  margin: 20px;
-  background-color: transparent; 
-  border-color:var(--ourRed);
-  color: var(--ourSilver);
-  padding: 13px 13px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 15px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  
+  width: 50%;
+  height: 50px;
 }
 .watchedBtn{
   background-color: var(--ourNavy); 
   border: none;
   color: var(--ourSilver);
-  padding: 15px 32px;
-  margin-top: 15px;
-  text-align: center;
+  padding: 15px 25px;
   text-decoration: none;
-  display: flex;
+  display:flex;
   font-size: 16px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
   transition: all 0.3s ease;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.watchedBtn:hover{
+  opacity: 0.8;
 }
 .abs,
 h2:after,
@@ -62,7 +78,6 @@ h2:after,
 .news .article figcaption {
   position: absolute;
   text-shadow: 2px 2px #24282f;
-
 }
 .rel,
 h2,
@@ -109,7 +124,6 @@ h2 span {
 }
 body {
   background: #24282f;
-  font-family: 'Alegreya Sans';
 }
 .wrapper {
   padding: 15px;
@@ -146,7 +160,7 @@ h2 span {
 }
 .cards .card,
 .news .card {
-  margin: 20px;
+  margin: auto;
   width: 250px;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.8);
@@ -168,7 +182,7 @@ h2 span {
   padding: 20px;
   padding-bottom: 10px;
   font-size: 20px;
-  background: none;
+  background: #141619c4;
   color: #fff;
   transform: translateY(100%);
   transition: 0.3s;
@@ -240,7 +254,7 @@ h2 span {
   transition: 0.2s;
 }
 .news .article figcaption h3 {
-  color: #3792e3;
+  color: var(--ourNavy);
   font-size: 16px;
   margin-bottom: 0;
   font-weight: bold;
@@ -256,4 +270,7 @@ h2 span {
 .news .article:active figcaption {
   opacity: 1;
   transform: none;
+}
+.Body1{
+  background-color: #110F16;
 }
