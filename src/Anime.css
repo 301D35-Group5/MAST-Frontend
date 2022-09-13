@@ -6,7 +6,6 @@
   --ourNavy: #30475E;
   --ourSilver: #F5F5F5;
   color: var(--ourSilver);
-  text-shadow: 2px 2px #24282f;
 }
 .genreForm{
   width: 40%;
@@ -62,6 +61,8 @@ h2:after,
 .news .card:after,
 .news .article figcaption {
   position: absolute;
+  text-shadow: 2px 2px #24282f;
+
 }
 .rel,
 h2,
