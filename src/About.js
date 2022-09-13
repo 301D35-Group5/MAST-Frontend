@@ -11,7 +11,7 @@ class About extends React.Component {
         <hr></hr>
         <h3 className="head">Our Goal</h3>
         <article>
-          <p>
+          <p className="parag">
             We are a team of talented and passionate people who wanted to make a
             website that can give us and everyone a home to find their best show
             to watch, so we designed and built MAST to give people access to
@@ -27,14 +27,14 @@ class About extends React.Component {
         </article>
         <hr></hr>
         <h3 className="head">Our Team</h3>
-        <p>
+        <p className="parag">
           Remeber the talened and passionate team i mentioned before ?! Let me
           introduce you to our team who made such an amazing website :
         </p>
         <div>
           <ul class="grid">
             <li class="grid-item">
-              <img
+              < img className="imgAbout"
                 src="http://organicthemes.com/demo/fresh/files/2014/03/profile-pic-300x300.jpg"
                 alt=""
                 class="square-pf"
@@ -43,7 +43,7 @@ class About extends React.Component {
               <span class="member-title">Leader</span>
             </li>
             <li class="grid-item">
-              <img
+              < img className="imgAbout"
                 src="http://organicthemes.com/demo/fresh/files/2014/03/profile-pic-300x300.jpg"
                 alt=""
                 class="square-pf"
@@ -52,7 +52,7 @@ class About extends React.Component {
               <span class="member-title">Back End + Front End</span>
             </li>
             <li class="grid-item">
-              <img
+              < img className="imgAbout"
                 src="http://organicthemes.com/demo/fresh/files/2014/03/profile-pic-300x300.jpg"
                 alt=""
                 class="square-pf"
@@ -61,7 +61,7 @@ class About extends React.Component {
               <span class="member-title">Back End + Front End</span>
             </li>
             <li class="grid-item">
-              <img
+              < img className="imgAbout"
                 src="http://organicthemes.com/demo/fresh/files/2014/03/profile-pic-300x300.jpg"
                 alt=""
                 class="square-pf"
@@ -70,7 +70,7 @@ class About extends React.Component {
               <span class="member-title">Back End + Front End</span>
             </li>
             <li class="grid-item">
-              <img
+              < img className="imgAbout"
                 src="http://organicthemes.com/demo/fresh/files/2014/03/profile-pic-300x300.jpg"
                 alt=""
                 class="square-pf"
@@ -79,7 +79,7 @@ class About extends React.Component {
               <span class="member-title">Back End + WEB Design</span>
             </li>
             <li class="grid-item">
-              <img
+              < img className="imgAbout"
                 src="http://organicthemes.com/demo/fresh/files/2014/03/profile-pic-300x300.jpg"
                 alt=""
                 class="square-pf"

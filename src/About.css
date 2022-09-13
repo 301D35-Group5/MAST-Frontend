@@ -1,4 +1,4 @@
-p {
+.parag {
     text-align: center;
     margin-left: 20px;
     margin-right: 20px;
@@ -31,7 +31,7 @@ p {
     margin-right: 15px;
     margin-bottom: 30px;
   }
-    img {
+    .imgAbout {
       max-width: 100%;
       margin: auto;
       Transition: 0.3s;
