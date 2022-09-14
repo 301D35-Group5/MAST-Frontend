@@ -160,7 +160,7 @@ class HiddenGems extends React.Component {
                   
 
                   <Col className="recCol">
-                  <Card className="cardo" style={{ width: "20rem", height:"38rem" }}>
+                  <Card className="cardo" style={{ width: "18rem", height:"38rem" }}>
                       <Card.Body>
                         <Card.Img
                         className="formImg"
