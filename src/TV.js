@@ -117,6 +117,7 @@ componentDidMount = () => {
             <option value="Sci-Fi">Sci-Fi</option>
             <option value="Thriller">Thriller</option>
           </FormSelect>
+          </Form>
           <Form onSubmit={this.showGenre} className='genreForm'>
             <FormSelect className="formOptions" onChange={(e) => this.setState({ date: e.target.value })}>
               <option value="2000s">2000s</option>
@@ -125,7 +126,7 @@ componentDidMount = () => {
             </FormSelect>
           <Button type="submit" className="submitButton">Submit</Button>
         </Form>
-          </Form>
+          
             
               <h2>Best Shows</h2>
               
