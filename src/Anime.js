@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
-import { withAuth0 } from '@auth0/auth0-react';
-import { Button, Form, FormSelect, } from "react-bootstrap";
-import './Anime.css';
+import { withAuth0 } from "@auth0/auth0-react";
+import { Button, Form, FormSelect } from "react-bootstrap";
+import "./Anime.css";
 
 class Anime extends React.Component {
   constructor(props) {
@@ -18,14 +18,16 @@ class Anime extends React.Component {
     e.preventDefault();
 
     axios
-      .get(`${process.env.REACT_APP_SERVER}bestanime?filter=${this.state.filter}`)
+      .get(
+        `${process.env.REACT_APP_SERVER}bestanime?filter=${this.state.filter}`
+      )
       .then((res) => {
         console.log(this.state.filter);
 
         this.setState({ anime: res.data });
       })
 
-      .catch((err) => { });
+      .catch((err) => {});
   };
   componentDidMount() {
     axios
@@ -36,56 +38,59 @@ class Anime extends React.Component {
         this.setState({ anime: res.data });
       })
 
-      .catch((err) => { });
-  };
+      .catch((err) => {});
+  }
   showGenre = (e) => {
     e.preventDefault();
     axios
-      .get(`${process.env.REACT_APP_SERVER}animegenre?genre=${this.state.genre}`)
+      .get(
+        `${process.env.REACT_APP_SERVER}animegenre?genre=${this.state.genre}`
+      )
       .then((res) => {
         console.log(this.state.genre);
         this.setState({ anime: res.data });
       })
-      .catch((err) => { });
+      .catch((err) => {});
   };
-
 
   addProf = (event) => {
     const { user } = this.props.auth0;
-    alert("Success")
+    alert("Success");
     event.preventDefault();
     const obj = {
       title: event.target.title,
       poster: event.target.name,
-      email: user.email
+      email: user.email,
     };
-    console.log(obj)
+    console.log(obj);
     axios
       .post(`${process.env.REACT_APP_SERVER}addProf`, obj)
-      .then((result) => {
-
-      })
+      .then((result) => {})
 
       .catch((err) => {
-        console.log(err)
-      })
-
-  }
-
-
+        console.log(err);
+      });
+  };
 
   render() {
     const { isAuthenticated } = this.props.auth0;
     return (
       <div className="Body1">
-      <Form className="watchedForm" onSubmit={this.showBest}>
-          <button className="watchedBtn" onClick={() => this.setState({ filter: "watched" })}>
+        <Form className="watchedForm" onSubmit={this.showBest}>
+          <button
+            className="watchedBtn"
+            onClick={() => this.setState({ filter: "watched" })}
+          >
             Most Watched
           </button>
-          <button className="watchedBtn" onClick={() => this.setState({ filter: "voted" })}>
+          <button
+            className="watchedBtn"
+            onClick={() => this.setState({ filter: "voted" })}
+          >
             Highest Voted
           </button>
-          <FormSelect className="formOptions"
+          <FormSelect
+            className="formOptions"
             onChange={(e) => this.setState({ genre: e.target.value })}
           >
             <option value="Action">Action</option>
@@ -99,15 +104,14 @@ class Anime extends React.Component {
             <option value="Sci-Fi">Sci-Fi</option>
             <option value="Thriller">Thriller</option>
           </FormSelect>
-          <Form onSubmit={this.showGenre} className='genreForm'>
-          <Button type="submit" className="submitButton">Submit</Button>
         </Form>
-          </Form>
-        
-        
-        
+        <Form onSubmit={this.showGenre} className="genreForm">
+          <Button type="submit" className="submitButton">
+            Submit
+          </Button>
+        </Form>
 
-          {/* <Row xs={1} md={4} className="g-4">
+        {/* <Row xs={1} md={4} className="g-4">
             {this.state.anime.map((anime) => (
               <Col>
               <Card style={{ width: "18rem" }}>
@@ -120,8 +124,6 @@ class Anime extends React.Component {
                   </Col>
                   ))}
                 </Row> */}
-        
-
 
         <Row xs={1} md={4} className="g-4">
           {this.state.anime.map((anime) => (
@@ -137,9 +139,19 @@ class Anime extends React.Component {
             <div class="cards">
               <figure class="card">
                 <img src={anime.poster} alt="Poster" />
-                <figcaption><p>{anime.title}</p> <p>Rating: {anime.malRating}</p>{isAuthenticated && <Button onClick={this.addProf} className="" title={anime.title} name={anime.poster} >Add watch list</Button>} </figcaption>
-                
-                
+                <figcaption>
+                  <p>{anime.title}</p> <p>Rating: {anime.malRating}</p>
+                  {isAuthenticated && (
+                    <Button
+                      onClick={this.addProf}
+                      className=""
+                      title={anime.title}
+                      name={anime.poster}
+                    >
+                      Add watch list
+                    </Button>
+                  )}{" "}
+                </figcaption>
               </figure>
             </div>
           ))}
