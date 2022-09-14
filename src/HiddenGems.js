@@ -152,7 +152,7 @@ class HiddenGems extends React.Component {
           Add Recommendation
         </Button>}
 
-        <Row xs={1} md={4} lg={5} className="g-4">
+        <Row xs={1} md={4} className="g-4">
           {this.state.recoArr.map((val) => {
             return (
               <>
