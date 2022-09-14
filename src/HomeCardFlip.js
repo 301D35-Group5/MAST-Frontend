@@ -2,11 +2,14 @@ import React from "react";
  import "./flip.css";
  import { Row,Col } from 'react-bootstrap';
  import { Link } from "react-router-dom";
-
+ import { withAuth0 } from '@auth0/auth0-react';
+ import NavItem from 'react-bootstrap/NavItem';
+ import Login from './Login';
 
  class Flip extends React.Component{
     
 render(){
+  const { isAuthenticated } = this.props.auth0;
     return(
 <>
 
@@ -19,15 +22,15 @@ render(){
     <div class="card-front">
       <figure class="fig">
         <div class="img-bg"></div>
-        <img class="imgFlip" src="https://wallpaperaccess.com/full/7107111.jpg" alt="House of the dragon"></img>
+        <img class="imgFlip" src="https://media0.giphy.com/media/l0cydYWK8uWpXEaplL/200w.gif?cid=82a1493bivd1h4ewfe8p3jyc13b09d9kr85h63kxjre8zadv&rid=200w.gif&ct=g" alt="House of the dragon"></img>
         <figcaption class="figcaptionFlip">Trending Series</figcaption>
      </figure>
 
       <ul class="uiFlip">
-        <li class ="liFlip">House of the dragon</li>
-        <li class ="liFlip">House of the Dragon Breaks Records as the Most-Watched Premiere in HBO History</li>
-        <li class ="liFlip">IMDB 8.8 ⭐</li>
-        <li class ="liFlip">HBO</li>
+        <li class ="liFlip">The Boys</li>
+        <li class ="liFlip">A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers.</li>
+        <li class ="liFlip">IMDB 8.7 ⭐</li>
+        <li class ="liFlip">Amazon Prime</li>
        
       </ul>
     </div>
@@ -35,7 +38,7 @@ render(){
     <div class="card-back">
       <figure class="fig">
         <div class="img-bg"></div>
-        <img class="imgFlip" src="https://images-ext-1.discordapp.net/external/n726E5DLglvMSVlpSnNbLhdrJ_oIgIdlDU6XaqYMONc/https/i.imgur.com/LANaf1p.png?width=592&height=473" alt="Brohm Lake"></img>
+        <img class="imgFlip" src="https://media.discordapp.net/attachments/1017376095227617325/1019520148090130432/High_Resolution_Logo.png?width=774&height=580" alt="Brohm Lake"></img>
       </figure>
       <Link to="/TV" class="buttonFlip" >Explore more Series</Link>
      
@@ -66,15 +69,15 @@ render(){
     <div class="card-front">
       <figure class="fig">
         <div class="img-bg"></div>
-        <img class="imgFlip" src="https://static.zerochan.net/Yor.Briar.full.3627421.jpg" alt="Anime"></img>
+        <img class="imgFlip" src="https://25.media.tumblr.com/2d7ce9746c7687a00f2919da9de5e35e/tumblr_mvyvq7nUpE1r3maj7o1_500.gif" alt="Anime"></img>
         <figcaption class="figcaptionFlip">Trending Anime</figcaption>
       </figure >
 
       <ul class="uiFlip">
-        <li class ="liFlip">Spy x Family</li>
-        <li class ="liFlip">SPY x FAMILY Viewership hits record figures of 8 million till now</li>
-        <li class ="liFlip">IMDB 8.6 ⭐</li>
-        <li class ="liFlip">Wit Studio</li>
+        <li class ="liFlip">One Piece</li>
+        <li class ="liFlip">Follows the adventures of Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger. The famous mystery treasure named "One Piece".</li>
+        <li class ="liFlip">IMDB 8.9 ⭐</li>
+        <li class ="liFlip">Toei Animation</li>
        
       
 
@@ -84,7 +87,7 @@ render(){
     <div class="card-back">
       <figure class="fig">
         <div class="img-bg"></div>
-        <img class="imgFlip" src="https://images-ext-1.discordapp.net/external/n726E5DLglvMSVlpSnNbLhdrJ_oIgIdlDU6XaqYMONc/https/i.imgur.com/LANaf1p.png?width=592&height=473" alt="imageh-2"></img>
+        <img class="imgFlip" src="https://media.discordapp.net/attachments/1017376095227617325/1019520148090130432/High_Resolution_Logo.png?width=774&height=580" alt="imageh-2"></img>
       </figure>
       <Link to="/Anime" class="buttonFlip"> Explore more anime</Link>
 
@@ -108,23 +111,27 @@ render(){
 {/* <!-- /flip-card-container -->
 
 <!-- flip-card-container --> */}
-<Col>
+
+
+{/* HERE IS THE CHANGE******************************************************************************** */}
+
+
+
+<Col> 
 <div class="flip-card-container" >
   <div class="flip-card">
 
     <div class="card-front">
       <figure class="fig">
         <div class="img-bg"></div>
-        <img class="imgFlip" src="https://images3.alphacoders.com/122/1224844.jpg" alt="TOP GUN: MAVERICK"></img>
-        <figcaption class="figcaptionFlip">Trending Movies</figcaption>
+        <img class="imgFlip" src="https://r7q6w9z6.rocketcdn.me/career/wp-content/uploads/2021/04/Film.gif" alt="Recomendation"></img>
+        
+        <figcaption class="figcaptionFlip">Recommendation</figcaption>
       </figure>
 
       <ul class="uiFlip">
-        <li class ="liFlip">TOP GUN: MAVERICK</li>
-        <li class ="liFlip"> TOP GUN: MAVERICK currently stands as the No. 6 highest-grossing film in domestic box-office history and the No. 1 film of 2022</li>
-        <li class ="liFlip">IMDB 8.5 ⭐</li>
-        <li class ="liFlip">Paramount Pictures</li>
-        
+        <li class ="liFlip">Explore people recommendation</li>
+        <li class ="liFlip">People recommendation might change your mind!</li>
       </ul>
     </div>
 
@@ -132,9 +139,12 @@ render(){
       {/* <!-- only if the image is necessary --> */}
       <figure class="fig">
         <div class="img-bg"></div>
-        <img class="imgFlip" src="https://images-ext-1.discordapp.net/external/n726E5DLglvMSVlpSnNbLhdrJ_oIgIdlDU6XaqYMONc/https/i.imgur.com/LANaf1p.png?width=592&height=473" alt="Logo"></img>
+        <img class="imgFlip" src="https://media.discordapp.net/attachments/1017376095227617325/1019520148090130432/High_Resolution_Logo.png?width=774&height=580" alt="Logo"></img>
       </figure>
-      <Link to="/Anime" class="buttonFlip" > Explore more Movies</Link>
+      {isAuthenticated && <Link to="/HiddenGems" class="buttonFlip" >Recomendation</Link>}
+      {!isAuthenticated &&  <NavItem class="buttonFlip" style={{ color: "white", paddingLeft: "25px" }}>
+                  <Login />
+                </NavItem>}
 
      
 
@@ -161,4 +171,4 @@ render(){
     )
 }
 }
-export default Flip;
+export default withAuth0(Flip);

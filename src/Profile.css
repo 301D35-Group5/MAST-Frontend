@@ -9,37 +9,9 @@
 
 }
 
-header {
-	position:relative;
-	left:0;
-	top:0;
-	width:100%;
-	min-height:120px;
-	padding:50px 0;
-	color:#fff;
-	    background: #24282F url(https://www.athenadesignstudio.com/plugins/switch/images/bg.jpg) no-repeat center center;
-	margin-bottom:30px
-}
 
-/* Logo */
-header .logo {
-	clear:both;
-    display:block;
-	text-align:center;
-    padding-bottom:10px;
-}
 
-/* Title */
-header h1 {
-    font-weight:300;
-    font-size:24px;
-    color:#eee;	
-	letter-spacing:2px;
-	text-align:center;
-	text-transform:uppercase;
-	margin:0 !important;
-	padding-bottom:25px;
-}
+
 
 
 a,
@@ -47,23 +19,6 @@ a:hover,
 a:focus {
     color: inherit;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -154,3 +109,12 @@ a:focus {
 }
 
 
+.CardsProfile{
+    text-align: center;
+ }
+ .watchlistHeader{
+    border: #F05454;
+    border-style: solid;
+    display: inline-block;
+    padding: 10px;
+border-radius: 5px; }
