@@ -18,6 +18,7 @@ class UpdateForm extends React.Component {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className='modalLabel'>Series name</Form.Label>
                   <Form.Control
+                  maxlength = "20"
                     type="text"
                     placeholder="Series name"
                     name="seriesName"
@@ -27,6 +28,7 @@ class UpdateForm extends React.Component {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className='modalLabel'>Description</Form.Label>
                   <Form.Control
+                  maxlength = "150"
                     type="text"
                     placeholder="Description"
                     name="description"
@@ -36,6 +38,7 @@ class UpdateForm extends React.Component {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className='modalLabel'>Rating</Form.Label>
                   <Form.Control
+                  maxlength = "5"
                     type="text"
                     placeholder="Rating"
                     name="rating"
@@ -45,6 +48,7 @@ class UpdateForm extends React.Component {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className='modalLabel'>Year</Form.Label>
                   <Form.Control
+                  maxlength = "4"
                     type="text"
                     placeholder="Year"
                     name="year"

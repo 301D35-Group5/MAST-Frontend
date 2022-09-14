@@ -143,14 +143,16 @@ class HiddenGems extends React.Component {
   render() {
     const { isAuthenticated } = this.props.auth0;
     return (
-      <div>
-        <h2>Recommendations:</h2>
+      <div className="Body1">
+        <br></br> <br></br><br></br>
 
+        <h2 className="recoHeader">Recommendations</h2>
+        <br></br>
         {isAuthenticated && <Button variant="primary" onClick={this.openAddForm} className="recBtn">
           Add Recommendation
         </Button>}
 
-        <Row xs={1} md={4} className="g-4">
+        <Row xs={1} md={4} lg={5} className="g-4">
           {this.state.recoArr.map((val) => {
             return (
               <>
@@ -158,9 +160,10 @@ class HiddenGems extends React.Component {
                   
 
                   <Col className="recCol">
-                    <Card className="cardo" style={{ width: "18rem" }}>
+                  <Card className="cardo" style={{ width: "20rem", height:"38rem" }}>
                       <Card.Body>
                         <Card.Img
+                        className="formImg"
                           src={val.img}
                           onError={({ currentTarget }) => {
                             currentTarget.onerror = null; // prevents looping
@@ -173,14 +176,14 @@ class HiddenGems extends React.Component {
                         <Card.Text>Rating: {val.rating}</Card.Text>
                         <Card.Text>Year: {val.year}</Card.Text>
                         {this.showButton(val) && <Button
-                          variant="primary"
+                          variant="danger"
                           onClick={() => this.openForm(val)}
                         >
                           Update
                         </Button>}
 
                         {this.showButton(val) &&<Button
-                          variant="primary"
+                          variant="danger"
                           onClick={() => this.deleteReco(val._id)}
                         >
                           Delete
@@ -206,6 +209,7 @@ class HiddenGems extends React.Component {
           addReco={this.addReco}
           selectedReco={this.state.selectedReco}
         />
+        <br></br><br></br>
       </div>
     );
   }

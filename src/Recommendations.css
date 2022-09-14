@@ -19,7 +19,7 @@
     color: var(--ourSilver);
     align-items: center;
     align-content: center;
-    border-radius: 5px;
+    border-radius: 15px;
 
 }
 .cardo button{
@@ -32,10 +32,11 @@
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: all 0.3s ease;
 }
 .recBtn{
+    
     margin: 20px;
     background-color: var(--ourNavy); 
     border: none;
@@ -45,19 +46,31 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: all 0.3s ease;
+    margin-left: 41.5%;
+    margin-bottom: 100px;
 }
 .recBtn{
     opacity: 0.8;
+
+  }
+  .recoHeader{
+    
+    font-weight: 700;
+    margin-left: 40.5%;
+  }
+  .formImg{
+    margin-bottom: 10px;
+    height: 250px;
+  }
+  .RecoCards{
+    height: max-content;
   }
 
-  .modal{
-   color: black;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-  }
-  .modalLabel{
+  .modalLabel
+  {
     color: black;
-    font-size: 20px;
+    font-weight: 700;
   }
+ 

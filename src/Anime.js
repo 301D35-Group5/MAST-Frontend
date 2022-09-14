@@ -76,6 +76,7 @@ class Anime extends React.Component {
     const { isAuthenticated } = this.props.auth0;
     return (
       <div className="Body1">
+        <div className="allWatchedForm">
         <Form className="watchedForm" onSubmit={this.showBest}>
           <button
             className="watchedBtn"
@@ -93,23 +94,24 @@ class Anime extends React.Component {
             className="formOptions"
             onChange={(e) => this.setState({ genre: e.target.value })}
           >
-            <option value="Action">Action</option>
-            <option value="Adventure">Adventure</option>
-            <option value="Comedy">Comedy</option>
-            <option value="Drama">Drama</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Horror">Horror</option>
-            <option value="Mystery">Mystery</option>
-            <option value="Romance">Romance</option>
-            <option value="Sci-Fi">Sci-Fi</option>
-            <option value="Thriller">Thriller</option>
+            <option value="Action" style={{color:"#30475E"}}>Action</option>
+            <option value="Adventure" v>Adventure</option>
+            <option value="Comedy" style={{color:"#30475E"}}>Comedy</option>
+            <option value="Drama" style={{color:"#30475E"}}>Drama</option>
+            <option value="Fantasy" style={{color:"#30475E"}}>Fantasy</option>
+            <option value="Horror" style={{color:"#30475E"}}>Horror</option>
+            <option value="Mystery" style={{color:"#30475E"}}>Mystery</option>
+            <option value="Romance" style={{color:"#30475E"}}>Romance</option>
+            <option value="Sci-Fi" style={{color:"#30475E"}}>Sci-Fi</option>
+            <option value="Thriller" style={{color:"#30475E"}}>Thriller</option>
           </FormSelect>
         </Form>
-        <Form onSubmit={this.showGenre} className="genreForm">
-          <Button type="submit" className="submitButton">
+        <Form onSubmit={this.showGenre} className="genreForm"> 
+          <Button type="submit" className="submitButton" variant="danger"> 
             Submit
           </Button>
         </Form>
+        </div>
 
         {/* <Row xs={1} md={4} className="g-4">
             {this.state.anime.map((anime) => (
@@ -124,7 +126,7 @@ class Anime extends React.Component {
                   </Col>
                   ))}
                 </Row> */}
-
+        <br></br>
         <Row xs={1} md={4} className="g-4">
           {this.state.anime.map((anime) => (
             // <Col>
@@ -136,15 +138,16 @@ class Anime extends React.Component {
             //     </Card.Body>
             //   </Card>
             // </Col>
-            <div class="cards">
+            <div class="cards" style={{ textAlign: "center" }}>
               <figure class="card">
                 <img src={anime.poster} alt="Poster" />
                 <figcaption>
                   <p>{anime.title}</p> <p>Rating: {anime.malRating}</p>
                   {isAuthenticated && (
-                    <Button
+                    <Button 
+                    variant="danger"
                       onClick={this.addProf}
-                      className=""
+                      className="submitButton"
                       title={anime.title}
                       name={anime.poster}
                     >
@@ -156,7 +159,10 @@ class Anime extends React.Component {
             </div>
           ))}
         </Row>
+        <br></br> <br></br> 
+
       </div>
+
     );
   }
 }

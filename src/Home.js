@@ -25,7 +25,7 @@ class Home extends React.Component {
         <article>
         <h3 class="heading-top">What is MAST?</h3>
         <h2>You can find here your desired show and you can share your opinion about it.</h2>
-        <a class="read-more" href='./About.js'>more info</a>
+        <a class="read-more" href='./About'>more info</a>
         </article>
         </section>
         <Cards/>
@@ -45,6 +45,15 @@ class Home extends React.Component {
           <img src='https://images8.alphacoders.com/104/thumb-1920-1041513.jpg' alt='Watch list'></img>
           
           </article>
+        </section>
+        <section class="headHomePart">
+        <article>
+       <img src='https://thumbs.dreamstime.com/x/k-animation-impressive-coming-soon-message-background-cinema-movie-teaser-trailer-movie-trailer-coming-soon-160073836.jpg' alt='Movies'></img>
+        </article>
+        <article>
+        <h3 class="heading-top">Movies section is comming soon!</h3>
+
+        </article>
         </section>
         </section>
       
